@@ -14,6 +14,3 @@ Tailwind CSS: For styling and making the app responsive.
 ExchangeRate-API: Fetches real-time currency exchange rates.
 Vite: Build tool used for lightning-fast development and bundling.
 
-git clone https://github.com/your-username/currency-converter.git
-cd currency-converter
-
