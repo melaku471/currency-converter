@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html, body {
+    height: 100%; /* Ensure full height */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    background: url("bg.png") no-repeat center;
+    background-color:black;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+}
+
+.currency-converter {
+    background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+    padding: 40px 30px 50px;
+    border-radius: 20px; /* Adjusted for more curvature */
+    max-width: 410px;
+    backdrop-filter: blur(15px); /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+}
+
+.currency-converter .converter-title {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.converter-form {
+    margin-top: 45px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 100%; /* Make it take full width */
+}
+
+.form-label {
+    color: #fff;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 9px;
+    font-size: 1rem;
+}
+
+.form-input {
+    outline: none;
+    font-size: 1.1rem;
+    padding: 0 10px; /* Adjusted padding for better alignment */
+    color: #fff;
+    font-weight: 500;
+    min-height: 48px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%; /* Ensure full width */
+}
+
+.form-currency-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currency-select {
+    display: flex;
+    padding: 0 10px;
+    min-height: 45px;
+    align-items: center;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.currency-select img {
+    width: 25px;
+    margin-right: 5px; /* Add margin to create space between flag and dropdown */
+}
+
+.currency-dropdown {
+    outline: none;
+    border: none;
+    background: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 0 10px 0 5px;
+}
+
+.currency-dropdown option {
+    color: #000;
+    font-weight: 500;
+}
+
+.submit-button {
+    width: 100%;
+    min-height: 52px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.exchange-rate-result {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 25px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-currency-group .swap-icon {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    margin: 0 10px; /* Add margin to create space between fields */
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
