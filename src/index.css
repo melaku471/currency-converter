@@ -15,14 +15,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
     min-height: 100vh;
     background: url("bg.png") no-repeat center;
-    background-color:black;
+    background-color: black;
     background-size: cover;
-    background-position:center;
-    background-repeat: no-repeat;
-
 }
 
 #root {
@@ -34,55 +30,63 @@ body {
 }
 
 .currency-converter {
-    background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
-    padding: 40px 30px 50px;
-    border-radius: 20px; /* Adjusted for more curvature */
-    max-width: 410px;
+    background: rgba(0, 0, 0, 0.7); /* Slightly darker semi-transparent background */
+    padding: 40px 20px; /* Responsive padding */
+    border-radius: 20px; /* More curvature for modern look */
+    max-width: 90%; /* Use percentage for responsiveness */
+    max-width: 410px; /* Still limit max width for larger screens */
     backdrop-filter: blur(15px); /* Glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly lighter border */
     overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
 }
 
 .currency-converter .converter-title {
     color: #fff;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: 1.8rem; /* Increased size for better visibility */
+    font-weight: 700; /* Bolder title */
     text-align: center;
+    margin-bottom: 20px; /* Spacing below title */
 }
 
 .converter-form {
-    margin-top: 45px;
+    margin-top: 20px; /* Adjusted for better spacing */
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
-    width: 100%; /* Make it take full width */
+    margin-bottom: 20px; /* Reduced space for a more compact look */
+    width: 100%; /* Full width */
 }
 
 .form-label {
     color: #fff;
-    font-weight: 500;
+    font-weight: 600; /* Bolder labels */
     display: block;
-    margin-bottom: 9px;
+    margin-bottom: 5px; /* Reduced spacing below label */
     font-size: 1rem;
 }
 
 .form-input {
     outline: none;
     font-size: 1.1rem;
-    padding: 0 10px; /* Adjusted padding for better alignment */
+    padding: 0 10px; /* Adjusted padding */
     color: #fff;
     font-weight: 500;
     min-height: 48px;
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 100%; /* Ensure full width */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly darker border */
+    transition: border-color 0.3s; /* Smooth transition on focus */
+}
+
+.form-input:focus {
+    border-color: rgba(255, 255, 255, 0.8); /* Change border color on focus */
 }
 
 .form-currency-group {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -100,7 +104,7 @@ body {
 
 .currency-select img {
     width: 25px;
-    margin-right: 5px; /* Add margin to create space between flag and dropdown */
+    margin-right: 5px; /* Space between flag and dropdown */
 }
 
 .currency-dropdown {
@@ -126,10 +130,13 @@ body {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff; /* Text color for button */
+    transition: background 0.3s; /* Smooth transition */
 }
 
 .submit-button:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.2); /* Slightly lighter on hover */
 }
 
 .exchange-rate-result {
@@ -137,8 +144,8 @@ body {
     font-size: 1.1rem;
     font-weight: 500;
     text-align: center;
-    padding: 25px 0;
-    margin-top: 25px;
+    padding: 20px 0;
+    margin-top: 15px; /* Adjusted spacing */
     border-radius: 6px;
     letter-spacing: 0.5px;
     background: rgba(255, 255, 255, 0.15);
@@ -149,11 +156,46 @@ body {
     width: 40px;
     cursor: pointer;
     display: flex;
-    margin: 0 10px; /* Add margin to create space between fields */
-    margin-top: 25px;
+    margin: 0 10px; /* Space between fields */
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: background 0.3s; /* Smooth transition */
+}
+
+.form-currency-group .swap-icon:hover {
+    background: rgba(255, 255, 255, 0.2); /* Lighter on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .currency-converter {
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+        border-radius: 15px; /* Slightly less curvature */
+        max-width: 95%; /* Full width on smaller screens */
+    }
+
+    .currency-converter .converter-title {
+        font-size: 1.6rem; /* Smaller title size */
+    }
+
+    .form-label, .form-input, .submit-button {
+        font-size: 0.9rem; /* Smaller font for input elements */
+    }
+}
+
+@media (max-width: 480px) {
+    .currency-converter {
+        padding: 20px 10px; /* Further adjust padding */
+    }
+
+    .currency-converter .converter-title {
+        font-size: 1.4rem; /* Further reduce title size */
+    }
+
+    .form-label, .form-input, .submit-button {
+        font-size: 0.85rem; /* Further decrease font size */
+    }
 }
