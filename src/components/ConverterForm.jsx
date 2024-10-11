@@ -7,6 +7,7 @@ const ConverterForm = () => {
   const [toCurrency, setToCurrency] = useState("ETB"); // default to ETB
   const [amount, setAmount] = useState(1); // Default amount to 1 for initial conversion rate display
   const [exchangeRate, setExchangeRate] = useState(null);
+  const [result, setResult] = useState(null); // State for calculated result
   const [error, setError] = useState(null);
 
   // Handlers for form inputs
@@ -39,7 +40,7 @@ const ConverterForm = () => {
       if (!response.ok) throw new Error("Something went wrong");
 
       const data = await response.json();
-      setExchangeRate(data.conversion_rate);  // Save the exchange rate
+      setExchangeRate(data.conversion_rate); // Save the exchange rate
       setError(null);
     } catch (error) {
       console.log(error);
@@ -55,7 +56,9 @@ const ConverterForm = () => {
   // Handle form submission
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    getExchangeRate();
+    getExchangeRate(); // Fetch the exchange rate when the form is submitted
+    const calculatedResult = amount * exchangeRate; // Calculate the result
+    setResult(calculatedResult); // Set the calculated result
   };
 
   return (
@@ -95,9 +98,9 @@ const ConverterForm = () => {
 
       <button type="submit" className="submit-button">Get Exchange</button>
 
-      {exchangeRate && (
+      {result !== null && (
         <p className="exchange-rate-result">
-          {amount} {fromCurrency} = {(amount * exchangeRate).toFixed(2)} {toCurrency}
+          {amount} {fromCurrency} = {(result).toFixed(2)} {toCurrency}
         </p>
       )}
 

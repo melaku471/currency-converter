@@ -33,8 +33,9 @@ body {
     background: rgba(0, 0, 0, 0.7); /* Slightly darker semi-transparent background */
     padding: 40px 20px; /* Responsive padding */
     border-radius: 20px; /* More curvature for modern look */
-    max-width: 90%; /* Use percentage for responsiveness */
-    max-width: 410px; /* Still limit max width for larger screens */
+    max-width: 370px; /* Keep the maximum width for larger screens */
+    max-height: 1000px; /* Adjusted max height for vertical expansion */
+    width: 100%; /* Full width */
     backdrop-filter: blur(15px); /* Glass effect */
     border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly lighter border */
     overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
@@ -136,7 +137,8 @@ body {
 }
 
 .submit-button:hover {
-    background: rgba(255, 255, 255, 0.2); /* Slightly lighter on hover */
+    background-color: white; /* Keep background color white on hover */
+    color: black; /* Keep text color black on hover */
 }
 
 .exchange-rate-result {
@@ -175,7 +177,6 @@ body {
     .currency-converter {
         padding: 30px 15px; /* Adjust padding for smaller screens */
         border-radius: 15px; /* Slightly less curvature */
-        max-width: 95%; /* Full width on smaller screens */
     }
 
     .currency-converter .converter-title {
